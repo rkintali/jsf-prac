@@ -1,16 +1,21 @@
 package com.prac;
 
+import java.io.Serializable;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "helloWorld", eager = true)
+@ManagedBean(name = "helloBean", eager = true)
 @SessionScoped
-public class HelloWorld {
-	@ManagedProperty(value = "#{message}")
+public class HelloWorld implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/*@ManagedProperty(value = "#{message}")
 	private Message messageBean;
-
+*/
 	private String message;
 
 	public HelloWorld() {
@@ -18,21 +23,27 @@ public class HelloWorld {
 	}
 
 	@PostConstruct
-	public void init(){
+	public void init() {
 		System.out.println("Post construct method - executed");
-		this.message = "This is a message from post construct";
+		this.setMessage("This is a message from post construct");
 	}
+
 	public String getMessage() {
 		System.out.println("Getting message");
-		if (messageBean != null) {
+		message = "This is a smiple message";
+		/*if (messageBean != null) {
 			message = messageBean.getMessage();
-		}else{
+		} else {
 			message = "This is a simple message";
-		}
+		}*/
 		return message;
 	}
 
-	public void setMessageBean(Message message) {
-		this.messageBean = message;
+	public void setMessage(String message) {
+		this.message = message;
 	}
+
+	/*public void setMessageBean(Message message) {
+		this.messageBean = message;
+	}*/
 }
