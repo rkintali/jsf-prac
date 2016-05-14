@@ -25,6 +25,11 @@
 			<artifactId>jsf-impl</artifactId>
 			<version>2.1.7</version>
 		</dependency>
+		<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
 		<!-- http://mvnrepository.com/artifact/org.mortbay.jetty/jetty-maven-plugin -->
 		<!-- <dependency>
 			<groupId>org.mortbay.jetty</groupId>

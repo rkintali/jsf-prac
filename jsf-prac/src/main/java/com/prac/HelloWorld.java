@@ -43,4 +43,14 @@ public class HelloWorld implements Serializable {
 		this.messageBean = messageBean;
 	}
 
+	/*
+	 * action handler to show lucky message
+	 */
+	public String showLuckyMessage(){
+		if("Ram".equalsIgnoreCase(this.getMessageBean().getMessage())){
+			return "goodboy";
+		}else{
+			return "badboy";
+		}
+	}
 }
