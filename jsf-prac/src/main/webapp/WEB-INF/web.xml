@@ -13,9 +13,9 @@
 	<welcome-file-list>
 		<welcome-file>faces/home.xhtml</welcome-file>
 	</welcome-file-list>
-	<listener>
+	<!-- <listener>
 		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
-	</listener>
+	</listener> -->
 	<!-- FacesServlet is main servlet responsible to handle all request. It 
 		acts as central controller. This servlet initializes the JSF components before 
 		the JSP is displayed. -->

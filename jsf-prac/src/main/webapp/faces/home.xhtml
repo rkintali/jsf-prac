@@ -7,14 +7,20 @@
 
 <h:head>
 	<title>JSF 2.0 Hello World</title>
+	<h:outputStylesheet library="css"  name="bootstrap.css"></h:outputStylesheet>
 </h:head>
-<h:body>
-	<h2>JSF 2.0 Hello World Example - hello.xhtml</h2>
+<h:body styleClass="container">
+
+	<h2 class="text-primary">JSF 2.0 Hello World Example</h2>
 	<h:form>
-        <h:inputText value="#{helloBean.message}"></h:inputText>
-        <h:commandButton value="Welcome friend" action="welcome"></h:commandButton>
+		<div class="form-group">
+		<h:outputText styleClass="control-label">User:</h:outputText>
+        <h:inputText styleClass="form-control" value="#{helloBean.message}"></h:inputText>
+        </div>
+        <div class="form-group">
+		<h:commandButton styleClass="btn btn-primary" value="Welcome friend" action="welcome"></h:commandButton>
+        </div>
+        
     </h:form>
-		Value: <h:outputText value="#{helloBean.message}"></h:outputText>
-		
 </h:body>
 </html>

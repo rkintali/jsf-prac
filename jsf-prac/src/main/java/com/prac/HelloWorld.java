@@ -25,8 +25,8 @@ public class HelloWorld implements Serializable{
 	}
 
 	public String getMessage() {
-		message = "test";
-		System.out.println("Getting message");
+		//message = "test";
+		//System.out.println("Getting message");
 		return message;
 	}
 	
