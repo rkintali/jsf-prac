@@ -14,25 +14,25 @@
 	<h2 class="text-primary">JSF 2.0 Hello World Example</h2>
 	<h:form>
 		<div class="form-group">
-			<h:outputText styleClass="control-label">User:</h:outputText>
+			<h:outputText styleClass="control-label" value="#{resourceBundle['home.input.field.name']}"></h:outputText>
 			<h:inputText id="name" styleClass="form-control"
 				value="#{helloBean.messageBean.message}"></h:inputText>
 		</div>
 		<div class="row">
 			<div class="col-sm-3">
 				<h:commandButton styleClass="btn btn-primary"
-					value="Ajax Welcome me">
+					value="#{resourceBundle['home.button.ajax']}">
 					<f:ajax execute="name" render="output"></f:ajax>
 				</h:commandButton>
 			</div>
 			<div class="col-sm-3">
 				<h:commandButton styleClass="btn btn-primary"
-					value="Redirect welcome me" action="welcome?faces-redirect=true">
+					value="#{resourceBundle['home.button.redirect']}" action="welcome?faces-redirect=true">
 				</h:commandButton>
 			</div>
 			<div class="col-sm-3">
 				<h:commandButton styleClass="btn btn-primary"
-					value="Show my message" action="#{helloBean.showLuckyMessage}">
+					value="#{resourceBundle['home.button.lucky']}" action="#{helloBean.showLuckyMessage}">
 				</h:commandButton>
 			</div>
 		</div>
