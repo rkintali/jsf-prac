@@ -3,6 +3,7 @@ package com.prac;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "helloBean", eager = true)
@@ -12,7 +13,10 @@ public class HelloWorld implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String message;
+	// private String message;
+
+	@ManagedProperty(value="#{message}")
+	Message messageBean;
 
 	public HelloWorld() {
 		System.out.println("HelloWorld started!");
@@ -20,25 +24,23 @@ public class HelloWorld implements Serializable {
 
 	public void init() {
 		System.out.println("Post construct method - executed");
-		this.setMessage("This is a message from post construct");
-	}
-
-	public String getMessage() {
-		// message = "test";
-		// System.out.println("Getting message");
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+		this.getMessageBean().setMessage("This is a message from post construct");
 	}
 
 	public String getGreetMsg() {
-		if (this.getMessage() != null) {
-			return "Good day: " + this.getMessage() + "!";
+		if (this.getMessageBean().getMessage() != null) {
+			return "Good day: " + this.getMessageBean().getMessage() + "!";
 		} else {
 			return null;
 		}
+	}
+
+	public Message getMessageBean() {
+		return messageBean;
+	}
+
+	public void setMessageBean(Message messageBean) {
+		this.messageBean = messageBean;
 	}
 
 }
