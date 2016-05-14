@@ -12,9 +12,6 @@ public class HelloWorld implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/*@ManagedProperty(value = "#{message}")
-	private Message messageBean;
-*/
 	private String message;
 
 	public HelloWorld() {
@@ -30,14 +27,11 @@ public class HelloWorld implements Serializable{
 	public String getMessage() {
 		message = "test";
 		System.out.println("Getting message");
-		
 		return message;
 	}
 	
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
-	
 
 }
