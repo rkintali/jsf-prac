@@ -12,9 +12,12 @@
 <h:body styleClass="container">
 
 	<h2 class="text-primary">JSF 2.0 Hello World Example</h2>
-	<h:form>
+
+	<h:form styleClass="form-horizontal">
+
 		<div class="form-group">
-			<h:outputText styleClass="control-label" value="#{resourceBundle['home.input.field.name']}"></h:outputText>
+			<h:outputLabel styleClass="control-label"
+				value="#{resourceBundle['home.input.field.name']}"></h:outputLabel>
 			<h:inputText id="name" styleClass="form-control"
 				value="#{helloBean.messageBean.message}"></h:inputText>
 		</div>
@@ -27,17 +30,33 @@
 			</div>
 			<div class="col-sm-3">
 				<h:commandButton styleClass="btn btn-primary"
-					value="#{resourceBundle['home.button.redirect']}" action="welcome?faces-redirect=true">
+					value="#{resourceBundle['home.button.redirect']}"
+					action="welcome?faces-redirect=true">
 				</h:commandButton>
 			</div>
 			<div class="col-sm-3">
 				<h:commandButton styleClass="btn btn-primary"
-					value="#{resourceBundle['home.button.lucky']}" action="#{helloBean.showLuckyMessage}">
+					value="#{resourceBundle['home.button.lucky']}"
+					action="#{helloBean.showLuckyMessage}">
 				</h:commandButton>
 			</div>
 		</div>
+
 		<h:outputText styleClass="text-primary" id="output"
 			value="#{helloBean.greetMsg}"></h:outputText>
+		<h4 class="text-primary">Internationalization example</h4>
+		<hr />
+
+		<div class="form-group">
+			<h:outputLabel styleClass="control-label" value="Language"></h:outputLabel>
+			<h:selectOneMenu styleClass="form-control"
+				value="#{language.selectedLocaleCode}"
+				valueChangeListener="#{language.changeLocale}" onchange="submit();">
+				<f:selectItems value="#{language.localeList}"></f:selectItems>
+			</h:selectOneMenu>
+			<h:outputText styleClass="form-control-static"
+				value="#{resourceBundle['msg.welcome']}"></h:outputText>
+		</div>
 
 	</h:form>
 </h:body>

@@ -19,6 +19,9 @@
 		</navigation-case>
 	</navigation-rule>
 	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+		</locale-config>
 		<resource-bundle>
 			<base-name>custom-messages</base-name>
 			<var>resourceBundle</var>
