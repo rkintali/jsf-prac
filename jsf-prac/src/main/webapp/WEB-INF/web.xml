@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-<!-- Change to "Production" when you are ready to deploy -->
+	<!-- Change to "Production" when you are ready to deploy -->
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
@@ -13,7 +13,9 @@
 	<welcome-file-list>
 		<welcome-file>faces/home.xhtml</welcome-file>
 	</welcome-file-list>
-
+	<listener>
+		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+	</listener>
 	<!-- FacesServlet is main servlet responsible to handle all request. It 
 		acts as central controller. This servlet initializes the JSF components before 
 		the JSP is displayed. -->
@@ -23,22 +25,10 @@
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-<!-- 
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>/faces/*</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.jsf</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.faces</url-pattern>
-	</servlet-mapping>
- -->
+	<!-- <servlet-mapping> <servlet-name>Faces Servlet</servlet-name> <url-pattern>/faces/*</url-pattern> 
+		</servlet-mapping> <servlet-mapping> <servlet-name>Faces Servlet</servlet-name> 
+		<url-pattern>*.jsf</url-pattern> </servlet-mapping> <servlet-mapping> <servlet-name>Faces 
+		Servlet</servlet-name> <url-pattern>*.faces</url-pattern> </servlet-mapping> -->
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
