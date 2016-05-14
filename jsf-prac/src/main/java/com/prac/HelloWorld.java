@@ -7,7 +7,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "helloBean", eager = true)
 @SessionScoped
-public class HelloWorld implements Serializable{
+public class HelloWorld implements Serializable {
 	/**
 	 * 
 	 */
@@ -18,20 +18,27 @@ public class HelloWorld implements Serializable{
 		System.out.println("HelloWorld started!");
 	}
 
-	
 	public void init() {
 		System.out.println("Post construct method - executed");
 		this.setMessage("This is a message from post construct");
 	}
 
 	public String getMessage() {
-		//message = "test";
-		//System.out.println("Getting message");
+		// message = "test";
+		// System.out.println("Getting message");
 		return message;
 	}
-	
+
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getGreetMsg() {
+		if (this.getMessage() != null) {
+			return "Good day: " + this.getMessage() + "!";
+		} else {
+			return null;
+		}
 	}
 
 }
